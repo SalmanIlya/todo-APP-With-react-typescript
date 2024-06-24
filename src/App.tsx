@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Todo from "./Component/Todo";
 import todos from "./model";
+import TodoList from "./Component/TodoList";
 
 const App = () => {
   const [inputdat, setinputdat] = useState<string>("");
@@ -22,17 +23,23 @@ if(inputdat){
 
 
   };
-  console.log(Todos)
+  
   return (
     <div
-      className="h-screen w-screen bg-blue-500 flex flex-col  items-center
+      className="h-screen w-screen bg-blue-500 flex flex-col  
     "
     >
+      <div className=" flex flex-col  items-center
+    ">
       <Todo
         inputdat={inputdat}
         setinputdat={setinputdat}
         handlechange={handlechange}
       />
+      </div>
+     
+      <TodoList Todos={Todos} setTodos={setTodos}/>
+      
     </div>
   );
 };
