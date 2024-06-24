@@ -5,3 +5,16 @@
 .inp:focus{
     box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.5) ;
 }
+.todo{
+    height: 60px;
+    width: 400px;
+    background-color: #EDC621;
+    color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 5px; */
+    font-size: 20px;
+}
