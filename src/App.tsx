@@ -8,41 +8,37 @@ const App = () => {
   const [Todos, setTodos] = useState<todos[]>([]);
   const handlechange = (e: React.FormEvent) => {
     e.preventDefault();
-if(inputdat){
-
-    setTodos([
-      ...Todos,
-      {
-        id: Date.now(),
-        iscompleated: false,
-        todo: inputdat,
-      },
-    ]);
-    setinputdat("")
-}
-
-
+    if (inputdat) {
+      setTodos([
+        ...Todos,
+        {
+          id: Date.now(),
+          iscompleated: false,
+          todo: inputdat,
+        },
+      ]);
+      setinputdat("");
+    }
   };
-  
+
   return (
     <div
-      className=" min-h-screen max-h-auto  w-screen bg-blue-500 flex flex-col   items-center
+      className=" min-h-screen max-h-full  max-w-full min-w-screen bg-blue-500 flex flex-col   items-center
     "
     >
-      <div className=" flex flex-col  items-center
-    ">
-      <Todo
-        inputdat={inputdat}
-        setinputdat={setinputdat}
-        handlechange={handlechange}
-      />
+      <div
+        className=" flex flex-col  items-center
+    "
+      >
+        <Todo
+          inputdat={inputdat}
+          setinputdat={setinputdat}
+          handlechange={handlechange}
+        />
       </div>
       <div>
-      <TodoList Todos={Todos} setTodos={setTodos}/>
-
+        <TodoList Todos={Todos} setTodos={setTodos} />
       </div>
-     
-      
     </div>
   );
 };

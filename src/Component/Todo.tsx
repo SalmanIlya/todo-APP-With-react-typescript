@@ -1,31 +1,29 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import "./style.css";
-import todos from "../model";
 interface propsdata {
   inputdat: string;
   setinputdat: React.Dispatch<React.SetStateAction<string>>;
   handlechange: (e: React.FormEvent) => void;
-
-
 }
 
 const Todo: React.FC<propsdata> = ({ inputdat, setinputdat, handlechange }) => {
-
-const inputelement = useRef<HTMLInputElement>(null)
+  const inputelement = useRef<HTMLInputElement>(null);
 
   return (
     <div>
       <h1 className=" text-2xl bolder text-white text-center my-10 ">
         TODO APP
       </h1>
-      
-      <form  className="relative shadow-inner " onSubmit={(e)=>{
-        handlechange(e)
-        inputelement.current?.blur()
 
-        }}>
+      <form
+        className="relative shadow-inner "
+        onSubmit={(e) => {
+          handlechange(e);
+          inputelement.current?.blur();
+        }}
+      >
         <input
-        ref={inputelement}
+          ref={inputelement}
           value={inputdat}
           onChange={(e) => {
             setinputdat(e.target.value);
@@ -43,8 +41,6 @@ const inputelement = useRef<HTMLInputElement>(null)
           Add
         </button>
       </form>
-     
-      
     </div>
   );
 };
