@@ -8,7 +8,7 @@ setTodos: React.Dispatch<React.SetStateAction<todos[]>>;
 }
 const TodoList = ({Todos,setTodos}:todolist) => {
   return (
-    <div className='mx-20 my-10'>
+    <div className='mx-20 my-10 flex flex-col flex-nowrap   h-auto '>
       {Todos.map((todo)=>{
         return <>
         <SingleTodo todo={todo} Todos={Todos} key={todo.id}
