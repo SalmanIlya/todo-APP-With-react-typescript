@@ -26,7 +26,7 @@ if(inputdat){
   
   return (
     <div
-      className="h-screen w-screen bg-blue-500 flex flex-col  
+      className=" min-h-screen max-h-auto  w-screen bg-blue-500 flex flex-col   items-center
     "
     >
       <div className=" flex flex-col  items-center
@@ -37,8 +37,11 @@ if(inputdat){
         handlechange={handlechange}
       />
       </div>
-     
+      <div>
       <TodoList Todos={Todos} setTodos={setTodos}/>
+
+      </div>
+     
       
     </div>
   );
